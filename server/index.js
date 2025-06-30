@@ -19,6 +19,7 @@ const wsServer = new WebSocketServer({ server });
 
 wsServer.on('connection', (connection) => {
   console.log("Client connected");
+  connection.send("hello world")
 
   connection.on('message', async (message) => {
     try {
